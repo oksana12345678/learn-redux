@@ -1,4 +1,6 @@
-const appState = {
+import { createStore } from "redux";
+import { devToolsEnhancer } from "@redux-devtools/extension";
+const initialState = {
   tasks: [
     { id: 0, text: "Learn HTML and CSS", completed: true },
     { id: 1, text: "Get good at JavaScript", completed: true },
@@ -10,3 +12,9 @@ const appState = {
     status: "all",
   },
 };
+const rootReducer = (state = initialState, action) => {
+  return state;
+};
+const enhancer = devToolsEnhancer();
+
+export const store = createStore(rootReducer, enhancer);

@@ -1,10 +1,14 @@
 import { Formik, Field, Form } from "formik";
 import Button from "../Button/Button";
+import { useDispatch } from "react-redux";
+import { addTask } from "../../redux/actions";
 import css from "./AddTaskForm.module.css";
 const FormAddTask = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, action) => {
     const { text } = values;
-    text;
+    dispatch(addTask(text));
     action.resetForm();
   };
   return (
