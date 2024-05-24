@@ -21,6 +21,7 @@ const Task = ({ task }) => {
             className={css.checkbox}
             checked={task.completed}
             type="checkbox"
+            name="checkBox"
             onChange={handleToggle}
           />
         </Form>
